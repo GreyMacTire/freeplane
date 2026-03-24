@@ -49,7 +49,7 @@ import org.freeplane.main.addons.AddOnsController;
  */
 class UpdateCheckAction extends AFreeplaneAction {
 	private static final String UPDATE_AVAILABLE_COMPONENT_KEY = "updateAvailable";
-	private static final String UPDATE_URL = "https://sourceforge.net/projects/freeplane/files/freeplane%20stable/";
+	private static final String UPDATE_URL = "";
     private static final int VISIBLE_ADDON_ROWS = 8;
     private static boolean autorunEnabled = true;
 	private static Timer autorunTimer = null;
@@ -74,6 +74,9 @@ class UpdateCheckAction extends AFreeplaneAction {
 	public UpdateCheckAction(final Controller controller) {
 		super("UpdateCheckAction");
 		this.controller = controller;
+		autorunEnabled = false;
+		setEnabled(false);
+		ResourceController.getResourceController().setProperty(CHECK_UPDATES_AUTOMATICALLY, Boolean.FALSE.toString());
 		controller.getMapViewManager().addMapViewChangeListener(new IMapViewChangeListener() {
 			public void afterViewChange(final Component oldView, final Component newView) {
 				if (newView == null) {
@@ -94,6 +97,9 @@ class UpdateCheckAction extends AFreeplaneAction {
 	}
 
 	public void actionPerformed(final ActionEvent e) {
+		if (!isEnabled()) {
+			return;
+		}
 		final boolean autoRun = e.getSource().equals(autorunTimer);
 		if (autorunTimer != null) {
 			autorunTimer.stop();
