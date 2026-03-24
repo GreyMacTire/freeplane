@@ -74,9 +74,6 @@
 					<choice value="ic_ram" />
 				</combo>
 			</separator>
-			<separator name="updates">
-				<boolean name="check_updates_automatically" />
-			</separator>
 			<separator name="surveys">
 				<boolean name="neverShowSurvey" />
 			</separator>

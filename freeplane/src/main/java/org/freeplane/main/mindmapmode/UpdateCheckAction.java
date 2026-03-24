@@ -74,6 +74,9 @@ class UpdateCheckAction extends AFreeplaneAction {
 	public UpdateCheckAction(final Controller controller) {
 		super("UpdateCheckAction");
 		this.controller = controller;
+		autorunEnabled = false;
+		setEnabled(false);
+		ResourceController.getResourceController().setProperty(CHECK_UPDATES_AUTOMATICALLY, Boolean.FALSE.toString());
 		controller.getMapViewManager().addMapViewChangeListener(new IMapViewChangeListener() {
 			public void afterViewChange(final Component oldView, final Component newView) {
 				if (newView == null) {
@@ -94,6 +97,9 @@ class UpdateCheckAction extends AFreeplaneAction {
 	}
 
 	public void actionPerformed(final ActionEvent e) {
+		if (!isEnabled()) {
+			return;
+		}
 		final boolean autoRun = e.getSource().equals(autorunTimer);
 		if (autorunTimer != null) {
 			autorunTimer.stop();
