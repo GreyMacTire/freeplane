@@ -40,6 +40,7 @@ class EncryptedMap extends AFreeplaneAction {
 
 	EncryptedMap() {
 		super("EncryptedMap");
+		setEnabled(false);
 	}
 
 	public void actionPerformed(final ActionEvent e) {
