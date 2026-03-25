@@ -92,7 +92,6 @@
 			<Entry name="RevertAction"/>
 			<Entry builder="separator"  />
 			<Entry name="OpenAction" accelerator="control O" />
-			<Entry name="OpenURLMapAction" />
 			<Entry name="lastOpenedMaps">
 				<Entry builder="lastOpenedMaps" />
 				<Entry builder="noActions" />
