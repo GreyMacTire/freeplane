@@ -636,6 +636,7 @@
 			<Entry name="scripting" plugin="org.freeplane.plugin.script" builder="userScripts" />
 			<Entry name="ExecuteScriptForSelectionAction" plugin="org.freeplane.plugin.script" />
 			<Entry name="ExecuteScriptForAllNodes" plugin="org.freeplane.plugin.script" />
+			<Entry name="ScriptEditor" plugin="org.freeplane.plugin.script" />						
 						<Entry name="formula.EvaluateAllAction" plugin="org.freeplane.plugin.formula" />
 						<Entry name="formula.ClearDependenciesAction" plugin="org.freeplane.plugin.formula" accelerator="alt F5" />
 						<Entry name="formula.TracePrecedentsAction" plugin="org.freeplane.plugin.formula" accelerator="alt F6" />
