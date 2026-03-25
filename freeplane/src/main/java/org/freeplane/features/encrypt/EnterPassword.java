@@ -41,30 +41,11 @@ public class EnterPassword extends AFreeplaneAction{
 	}
 
 	public void actionPerformed(final ActionEvent e) {
-		final NodeModel node = Controller.getCurrentModeController().getMapController().getSelectedNode();
-		encryptionController.toggleLock(node, new SwingPasswordStrategy());
+		return;
 	}
 
 	public boolean canBeEnabled() {
-		final ModeController modeController = Controller.getCurrentModeController();
-		if (modeController == null) {
-			return false;
-		}
-		boolean isEncryptedNode = false;
-		boolean isOpened = false;
-		final MapController mapController = modeController.getMapController();
-		final NodeModel selectedNode = mapController.getSelectedNode();
-		if (selectedNode != null) {
-			if (modeController.canEdit()) {
-				return true;
-			}
-			final EncryptionModel enode = EncryptionModel.getModel(selectedNode);
-			if (enode != null) {
-				isEncryptedNode = true;
-				isOpened = enode.isAccessible();
-			}
-		}
-		return (isEncryptedNode && !isOpened);
+		return false;
 	}
 
 	@Override

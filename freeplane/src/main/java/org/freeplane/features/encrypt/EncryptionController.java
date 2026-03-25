@@ -48,8 +48,6 @@ public class EncryptionController implements IExtension {
 	public static void install(EncryptionController encryptionController){
 		final ModeController modeController = Controller.getCurrentModeController();
 		modeController.addExtension(EncryptionController.class, encryptionController);
-		final EnterPassword pwdAction = new EnterPassword(encryptionController);
-		modeController.addAction(pwdAction);
 	}
 
 
