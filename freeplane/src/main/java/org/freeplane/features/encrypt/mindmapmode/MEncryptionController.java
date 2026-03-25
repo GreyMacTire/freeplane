@@ -41,6 +41,8 @@ public class MEncryptionController extends EncryptionController {
 		final ModeController modeController = Controller.getCurrentModeController();
 		final RemoveEncryption removeEncryptionAction = new RemoveEncryption(encryptionController);
 		modeController.addAction(removeEncryptionAction);
+		final EncryptedMap encryptedMapAction = new EncryptedMap();
+		modeController.addAction(encryptedMapAction);
 	}
 	
 	public void removeEncryption(final NodeModel node, final PasswordStrategy passwordStrategy) {

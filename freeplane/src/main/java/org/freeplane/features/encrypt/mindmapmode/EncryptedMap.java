@@ -44,7 +44,7 @@ class EncryptedMap extends AFreeplaneAction {
 	}
 
 	public void actionPerformed(final ActionEvent e) {
-		return;
+		newEncryptedMap();
 	}
 
 	/**
