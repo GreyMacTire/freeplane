@@ -49,7 +49,7 @@ import org.freeplane.main.addons.AddOnsController;
  */
 class UpdateCheckAction extends AFreeplaneAction {
 	private static final String UPDATE_AVAILABLE_COMPONENT_KEY = "updateAvailable";
-	private static final String UPDATE_URL = "https://sourceforge.net/projects/freeplane/files/freeplane%20stable/";
+	private static final String UPDATE_URL = "";
     private static final int VISIBLE_ADDON_ROWS = 8;
     private static boolean autorunEnabled = true;
 	private static Timer autorunTimer = null;
