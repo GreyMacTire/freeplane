@@ -80,6 +80,9 @@ def defineWinDistTasks =  { javaRuntime, distName ->
             include '*/**'
             exclude '/*.exe'
             exclude '/*.l4j.ini'
+            exclude 'plugins/org.freeplane.plugin.ai/**'
+            exclude 'plugins/org.freeplane.plugin.formula/**'
+            exclude 'plugins/org.freeplane.plugin.script/**'
         }
         
         into "${appImageDir}/Freeplane/"
@@ -163,6 +166,9 @@ task copyWindowsPortableInstallerFiles(type: Copy) {
     // copy all other files
     from (globalBin) {
         exclude('*.bat', '*.ini', '*.sh')
+        exclude('plugins/org.freeplane.plugin.ai/**')
+        exclude('plugins/org.freeplane.plugin.formula/**')
+        exclude('plugins/org.freeplane.plugin.script/**')
     }
     into(portableInstallerDir + '/App/Freeplane/')
 
